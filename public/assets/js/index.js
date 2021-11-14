@@ -54,13 +54,11 @@ const renderActiveNote = () => {
   hide(saveNoteBtn);
 
   if (activeNote.id) {
-    console.log('ID exists!');
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
   } else {
-    console.log('ID doesnt exist!');
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
     noteTitle.value = '';
@@ -122,7 +120,6 @@ const handleRenderSaveBtn = () => {
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
-    console.log('HELLO!');
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
